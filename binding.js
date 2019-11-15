@@ -64,7 +64,7 @@
           <li>B</li>
           <li>N</li>
           <li>M</li>
-          <li class="delet">删除</li>
+          <li class="delet"><img src="backDeleteImg.jpg"></li>
         </div>
         <div class="area-one">
           <li>警</li>

@@ -199,6 +199,13 @@ li {
     background-color: #ACB3BB;
 }
 
+.keyboard .delet img {
+    width: 23px;
+    height: 16px;
+    margin: 0px;
+    margin-top: 12px;
+}
+
 /* 区分每排键盘 */
 .keyboard .area-one {
     display: flex;
