@@ -56,7 +56,7 @@
           <li>L</li>
         </div>
         <div class="area-one">
-          <li class="changeContentBtn other">返回</li>
+          <li class="changeContentBtn other" id="backto">返回</li>
           <li>Z</li>
           <li>X</li>
           <li>C</li>
@@ -133,6 +133,7 @@
   var oOlia = $("#keyboarda li"); // 地名简称键盘的li
   var oShuta = $("#shuta"); // 地名简称的关闭按钮
   var oYes = $("#confirmYes"); // 确定按钮
+  var oBack = $("#backto"); // 返回按钮
 
   oShut.click(function () { // 点击关闭，关闭数字字母键盘
     oShutkey.slideUp(100);
@@ -189,7 +190,7 @@
       function opli() { // 颜色框加到下一个
         oPli.eq(oPok).addClass("active").siblings().removeClass("active");
       }
-      if ($(this).html() === "删除") { // 点击删除按钮，往后回删内容
+      if ($(this).html() === '<img src="backDeleteImg.jpg">') { // 点击删除按钮，往后回删内容
         oPli.eq(oPok).html("");
         oPok--;
         opli();
@@ -197,7 +198,7 @@
           oArea.slideDown(200);
           oShutkey.slideUp(200);
         } else if (oPok < 8) {
-          oPli.eq(7).html('<div class="new"><span>+</span><i>新能源</i></div>');
+          oPli.eq(7).html('<div class="new"><span>+</span><i>新</i></div>');
         }
       } else { // 点击数字字母键盘替换获取车牌框索引值的值
         oPli.eq(oPok).html(this.innerText);
@@ -218,11 +219,18 @@
       }
       oPli.eq(oPok).addClass("active").siblings().removeClass("active"); // 点击一次颜色框跳转到下一个
     });
+
+    //确定按钮隐藏键盘
     oYes.unbind("click").click(function () {
       oPli.removeClass("active");
       oArea.slideUp(200);
       oShutkey.slideUp(200);
-
+    });
+    //返回按钮隐藏键盘
+    oBack.unbind("click").click(function () {
+      oPli.removeClass("active");
+      oArea.slideUp(200);
+      oShutkey.slideUp(200);
     });
   })();
 })(jQuery);
